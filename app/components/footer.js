@@ -24,26 +24,26 @@ const ITEMS = [
 export function Footer() {
   return (
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        {ITEMS.map(item => {
+        {ITEMS.map((item, index) => {
           return (
             <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          key={item.href}
-          href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src={item.src}
-            alt={item.alt}
-            width={16}
-            height={16}
-          />
-          {item.text}
-        </a>
-          );
-        })}
+              key={index}
+              className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >   
+              <Image
+                aria-hidden
+                src={item.src}
+                alt={item.alt}
+                width={16}
+                height={16}
+              />
+              {item.text}
+            </a>
+              );
+            })}
         
       </footer>
   );
