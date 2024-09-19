@@ -28,6 +28,7 @@ export function Footer() {
           return (
             <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          key={item.href}
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
