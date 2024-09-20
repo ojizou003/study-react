@@ -1,9 +1,18 @@
+'use client';
+
 import {Header} from '../components/header'
 import {Headline} from '../components/headline'
 import {Links} from '../components/links'
 import {Footer} from '../components/footer'
+import { useCounter } from '@/app/hooks/useCounter'
+import { useInputArray } from '@/app/hooks/useInputArray'
+import { useBgLightBlue } from '@/app/hooks/useBgLightBlue'
 
 export default function About() {
+  const {count, handleClick} = useCounter()
+  const {text, array, handleChange, handleAdd} = useInputArray()
+  useBgLightBlue();
+
   return (
     <body>
       <Header />
@@ -11,6 +20,20 @@ export default function About() {
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
           <Headline page='About' />
           <Links />
+
+          <button onClick={handleClick}>ボタン</button>
+          <h1 >{count}</h1>
+
+          <input type="text" value={text} onChange={handleChange}/>
+          <button onClick={handleAdd}> 追加</button>
+          <ul>
+            {array.map(item => {
+              return (
+                <li key={item}>{item}</li>
+              )
+            })}
+          </ul>
+
         </main>
         <Footer />
       </div>
