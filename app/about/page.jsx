@@ -9,7 +9,7 @@ import { useInputArray } from '@/app/hooks/useInputArray'
 import { useBgLightBlue } from '@/app/hooks/useBgLightBlue'
 
 export default function About() {
-  const {count, handleClick} = useCounter()
+  const {handleClick, doubleCount} = useCounter()
   const {text, array, handleChange, handleAdd} = useInputArray()
   useBgLightBlue();
 
@@ -22,7 +22,7 @@ export default function About() {
           <Links />
 
           <button onClick={handleClick}>ボタン</button>
-          <h1 >{count}</h1>
+          <h1 >{doubleCount}</h1>
 
           <input type="text" value={text} onChange={handleChange}/>
           <button onClick={handleAdd}> 追加</button>
