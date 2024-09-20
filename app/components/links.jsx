@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 export function Links() {
+  
   return (
     <div className="flex gap-4 items-center flex-col sm:flex-row">
       <a
