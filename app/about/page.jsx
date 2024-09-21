@@ -6,12 +6,12 @@ import {Links} from '../components/links'
 import {Footer} from '../components/footer'
 import { useCounter } from '@/app/hooks/useCounter'
 import { useInputArray } from '@/app/hooks/useInputArray'
-import { useBgLightBlue } from '@/app/hooks/useBgLightBlue'
+import { useBgColor } from '@/app/hooks/useBgColor'
 
 export default function About() {
   const {handleClick, doubleCount} = useCounter()
   const {text, array, handleChange, handleAdd} = useInputArray()
-  useBgLightBlue();
+  useBgColor();
 
   return (
     <body>
